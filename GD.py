@@ -7,9 +7,9 @@ import yaml
 
 
 def loaddata(show_im=True):
-    psf = Image.open(psfname)
+    psf = Image.open(psfname).convert('L')
     psf = np.array(psf, dtype='float32')
-    data = Image.open(imgname)
+    data = Image.open(imgname).convert('L')
     data = np.array(data, dtype='float32')
     
     """In the picamera, there is a non-trivial background 
